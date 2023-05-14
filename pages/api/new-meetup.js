@@ -5,7 +5,7 @@ const handler = async (req, res) => {
     const data = req.body;
 
     const client = await MongoClient.connect(
-      'mongodb+srv://atalayozmen21:BZW5ONRBLWuR00VK@clusteratalay.x0pldyc.mongodb.net/meetups?retryWrites=true&w=majority'
+      `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@clusteratalay.x0pldyc.mongodb.net/meetups?retryWrites=true&w=majority`
     ); //db name is defined in the url as "meetups"
     const db = client.db();
 

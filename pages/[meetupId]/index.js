@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   //we can also return fallback: 'blocking', which means that if the page is not pre-generated, it will try to generate it on the fly, but it will wait for the page to be generated before it returns it
 
   const client = await MongoClient.connect(
-    'mongodb+srv://atalayozmen21:BZW5ONRBLWuR00VK@clusteratalay.x0pldyc.mongodb.net/meetups?retryWrites=true&w=majority'
+    `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@clusteratalay.x0pldyc.mongodb.net/meetups?retryWrites=true&w=majority`
   ); //db name is defined in the url as "meetups"
   const db = client.db();
 
@@ -62,7 +62,7 @@ export async function getStaticProps(context) {
 
   // fetch data from an API
   const client = await MongoClient.connect(
-    'mongodb+srv://atalayozmen21:BZW5ONRBLWuR00VK@clusteratalay.x0pldyc.mongodb.net/meetups?retryWrites=true&w=majority'
+    `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@clusteratalay.x0pldyc.mongodb.net/meetups?retryWrites=true&w=majority`
   ); //db name is defined in the url as "meetups"
   const db = client.db();
 
