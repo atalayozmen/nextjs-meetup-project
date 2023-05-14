@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import MeetUpList from '../components/meetups/MeetUpList';
+import MeetupList from '../components/meetups/MeetupList';
 import { MongoClient } from 'mongodb';
 import Head from 'next/head';
 
@@ -13,7 +13,7 @@ const HomePage = (props) => {
           content='All meetups are shown in this page'
         ></meta>
       </Head>
-      <MeetUpList meetups={props.meetups} />
+      <MeetupList meetups={props.meetups} />
     </Fragment>
   );
 };
