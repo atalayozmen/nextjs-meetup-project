@@ -5,6 +5,7 @@ import Head from 'next/head';
 
 const MeetUpDetails = (props) => {
   const router = useRouter();
+  console.log('props ' + JSON.stringify(props));
 
   return (
     <Fragment>
@@ -47,7 +48,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: true,
+    fallback: false,
     paths: paths,
   };
 }
