@@ -49,7 +49,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false,
+    fallback: blocking,
     paths: paths,
   };
 }
